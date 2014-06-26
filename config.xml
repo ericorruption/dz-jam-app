@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.dzestudio.jamapp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Jam App</name>
+    <description>
+        Timer para processo criativo dividido em etapas.
+    </description>
+    <author email="eric@dzestudio.com.br" href="http://www.dzestudio.com.br/">
+        DZ Estúdio
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>

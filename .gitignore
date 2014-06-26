@@ -1,0 +1,26 @@
+# package managers
+node_modules
+www/bower_components
+
+# cordova
+platforms/
+plugins/
+
+# android
+*.apk
+*.class
+Android/bin/
+Android/gen/
+Android/assets/
+
+# ios
+
+
+# osx
+
+
+# windows
+
+
+# minified files
+# www/css/

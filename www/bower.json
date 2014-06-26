@@ -1,0 +1,20 @@
+{
+  "name": "Jam Session",
+  "version": "0.0.1",
+  "dependencies": {
+    "normalize-css": "latest",
+    "angular-route": "latest",
+    "angular-animate": "latest",
+    "angular-sanitize": "latest",
+    "fastclick": "latest",
+    "angular-timer": "latest"
+  },
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
