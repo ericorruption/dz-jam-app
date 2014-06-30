@@ -73,6 +73,7 @@ angular.module('myApp.controllers', []).
             if (data.millis === 0) {
                 if (navigator.notification){
                     navigator.notification.vibrate(1500); // 1.5 second
+                    navigator.notification.beep(1);
                 }
 
                 $scope.$apply(function () {
