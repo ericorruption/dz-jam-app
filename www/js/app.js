@@ -5,7 +5,7 @@ window.addEventListener('load', function() {
 }, false);
 
 function onDeviceReady() {
-  if (parseFloat(window.device.version) === 7.0) {
+  if (window.device.platform === 'iOS' && parseFloat(window.device.version) >= 7.0) {
     document.body.className += ' ios7';
   }
 }
@@ -33,7 +33,7 @@ run(function($rootScope) {
         '<li>Target</li>' +
         '<li>PopTalks</li>' +
         '<li>MarketTalks</li></ul>',
-      remminutes: 15 * 60
+      remminutes: 0.15 * 60
     },{
       round: 2,
       image: 'jam',

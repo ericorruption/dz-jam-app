@@ -1,5 +1,4 @@
-Jam App
------------
+# Jam App
 
 * To compile LESS assets, you need [Grunt](http://gruntjs.com/).
 * To start the project on `path/to/dz-jam-app/www`, you need [Bower](http://bower.io/).
