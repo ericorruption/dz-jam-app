@@ -106,10 +106,12 @@ body {
 }
 .low-nav {
   position: relative;
-  padding: 15px 0 15px 0;
   background-color: #56a623;
   overflow: hidden;
-  height: 127px;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 .low-nav:after {
   content: '';
@@ -197,6 +199,10 @@ body {
     width: 50%;
   }
   .first-column {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -481,6 +487,20 @@ body {
   padding: 0;
   margin: 0;
   list-style: none;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 240px;
 }
 .instruction {
   color: #56a623;
@@ -489,6 +509,23 @@ body {
   line-height: 26px;
   position: relative;
   text-align: left;
+  padding: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .instruction:before {
   counter-increment: section;
@@ -516,42 +553,6 @@ body {
 }
 .instruction strong {
   display: block;
-}
-@media (orientation: landscape), (min-width: 800px) {
-  .instructions {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .instruction {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    padding: 0;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
 }
 .seconds {
   border-radius: 50%;
@@ -607,7 +608,7 @@ body {
   margin: 0.25em 0 0.5em;
 }
 .round-content {
-  min-height: 30%;
+  min-height: 180px;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 21px;
@@ -620,6 +621,24 @@ body {
 .round-content > div {
   width: 100%;
 }
+.round-content.white {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 .big {
   margin-top: 0;
   font-weight: normal;
@@ -630,7 +649,8 @@ body {
   font-family: Aaux;
   font-weight: 100;
   font-size: 107px;
-  margin: 0.25em 0;
+  line-height: 0.7;
+  margin: 0 0 0.25em;
 }
 .finish,
 .continue {
@@ -643,7 +663,6 @@ body {
   font-weight: bold;
   font-size: 24px;
   line-height: 56px;
-  margin-top: 100px;
   text-transform: uppercase;
 }
 .continue:after {
@@ -664,7 +683,8 @@ body {
   font-weight: bold;
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
   right: 0;
-  top: 0;
+  top: 50%;
+  margin-top: -80px;
   line-height: 160px;
   text-align: center;
   width: 26%;
@@ -714,6 +734,12 @@ body {
 .blur + .second-column + .modal {
   opacity: 1;
 }
+@media (max-width: 320px) {
+  .round-content {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+}
 @media (orientation: landscape), (min-width: 800px) {
   .round-header img {
     max-width: 60px;
@@ -745,6 +771,7 @@ body {
   .help {
     font-size: 50px;
     top: auto;
+    margin-top: 0;
     bottom: 0;
   }
   .add-time {
@@ -800,6 +827,7 @@ body {
   .last {
     font-size: 55px;
     line-height: 71px;
+    margin: 0 !important;
   }
   .last strong {
     font-size: 81px;
