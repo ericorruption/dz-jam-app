@@ -8,6 +8,11 @@
   src: url(../fonts/AauxPro-Regular.ttf) format('opentype');
 }
 @font-face {
+  font-family: AauxBold;
+  src: url(../fonts/AauxPro-Bold.ttf) format('opentype');
+  font-weight: bold;
+}
+@font-face {
   font-family: Aaux;
   src: url(../fonts/AauxPro-BlackOSF.ttf) format('opentype');
   font-weight: bold;
@@ -424,6 +429,7 @@ body {
   font-weight: bold;
   font-size: 24px;
   line-height: 56px;
+  margin-bottom: 24px;
 }
 @media (max-width: 320px) {
   .logo-intro {
@@ -559,10 +565,11 @@ body {
   border: 9px solid #fff;
   display: block;
   font-size: 54px;
-  line-height: 70px;
+  line-height: 82px;
   height: 82px;
   width: 82px;
   text-align: center;
+  font-family: AauxBold;
   font-weight: bold;
   margin: auto;
   text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
@@ -752,7 +759,7 @@ body {
   }
   .seconds {
     font-size: 90px;
-    line-height: 110px;
+    line-height: 138px;
     height: 138px;
     width: 138px;
     border-width: 15px;
