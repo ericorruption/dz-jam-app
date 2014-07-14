@@ -1,6 +1,6 @@
 <div class="first-column" ng-class="blur">
     <div class="grey round-header timer-header">
-        <h1><img ng-src="img/ico-{{ round.image }}-black.svg"> Round {{ roundNum }}</h1>
+        <h1><img ng-src="img/ico-{{ round.image }}-black.png"> Round {{ roundNum }}</h1>
         <p>{{ round.hint }}</p>
     </div>
     <div class="white round-content">
@@ -13,10 +13,10 @@
 <div class="second-column">
     <div class="low-nav">
         <a class="btn-play" ng-hide="timerRunning || timerFinished" ng-click="startTimer()" >
-            <img ng-src="img/play.svg" alt="">
+            <img ng-src="img/play.png" alt="">
         </a>
         <a class="btn-play" ng-show="timerRunning" ng-click="pauseTimer()">
-            <img ng-src="img/pause.svg" alt="">
+            <img ng-src="img/pause.png" alt="">
         </a>
         <div class="btn-play" ng-show="timerFinished"><a class="add-time" ng-click="addTime()">
             <strong>Extra<br/> Time</strong> +5min
@@ -29,7 +29,7 @@
 <div class="modal" ng-hide="isHelpHidden">
     <div class="round-content" ng-bind-html="round.content"></div>
     <a ng-click="hideHelp()" class="close-modal">
-        <img src="img/fechar.svg">
+        <img src="img/fechar.png">
     </a>
 </div>
 
