@@ -16,6 +16,9 @@ module.exports = function(grunt) {
     },
     autoprefixer: {
       basic: {
+        options: {
+          browsers: ['Android 2.1', '> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']
+        },
         expand: true,
         cwd: '<%= dirs.css %>',
         src: '*.css',
