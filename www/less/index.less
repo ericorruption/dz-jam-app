@@ -70,7 +70,6 @@ img{
 .slide-left.ng-enter {
   z-index: 101;
   left: 100%;
-
 }
 
 .slide-left.ng-enter.ng-enter-active {
@@ -97,11 +96,6 @@ img{
 
 html{
   height: 100%;
-}
-
-.ios7{
-  padding-top: 20px;
-  box-shadow: -20px solid @brand;
 }
 
 body {
@@ -321,14 +315,9 @@ body{
 }
 
 .nav-drawer{
-  //backface-visibility: hidden;
-  //transition: transform 400ms ease;
+  backface-visibility: hidden;
+  -webkit-overflow-scrolling: touch;
 
-  //-webkit-overflow-scrolling: touch;
-  // overflow-y: scroll;
-}
-
-.nav-drawer {
   position: absolute;
   top: 0;
   left: -83%;
