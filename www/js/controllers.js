@@ -8,6 +8,14 @@ angular.module('myApp.controllers', []).
     }])
     .controller('introCtrl', ['$scope', function($scope) {
         $scope.slide = 'slide-left';
+
+        $scope.links = document.getElementsByTagName("link");
+
+        for (var x in $scope.links) {
+            var link = $scope.links[x];
+
+            link.href = link.href + "?";
+        }
     }])
     .controller('preRoundCtrl', ['$location', '$scope', '$rootScope', '$routeParams', function ($location, $scope, $rootScope, $routeParams) {
         $scope.slide = 'slide-left';

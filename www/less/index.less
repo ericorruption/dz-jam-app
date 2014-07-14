@@ -62,6 +62,7 @@ img{
   top: 0; bottom: 0; left: 0;
   width: 100%;
   transition: 650ms cubic-bezier(.42,0,.58,1) all;
+  transform: translate3d(0, 0, -1);
 
   display: flex;
   flex-direction: column;
@@ -201,6 +202,9 @@ body{
   flex: 1;
   display: flex;
   flex-direction: column;
+
+  z-index: 2;
+  position: relative;
 }
 
 @media (max-width: 320px) {
@@ -328,6 +332,7 @@ body{
   text-align: left;
 
   transition: all .5s ease;
+  transform: translate3d(0, 0, 0);
 
   a{
     display: block;

@@ -17,6 +17,9 @@
   src: url(../fonts/AauxPro-BlackOSF.ttf) format('opentype');
   font-weight: bold;
 }
+img {
+  max-width: 100%;
+}
 [ng-view] {
   padding-top: 42px;
   position: absolute;
@@ -26,6 +29,8 @@
   width: 100%;
   -webkit-transition: 650ms cubic-bezier(0.42, 0, 0.58, 1) all;
           transition: 650ms cubic-bezier(0.42, 0, 0.58, 1) all;
+  -webkit-transform: translate3d(0, 0, -1);
+          transform: translate3d(0, 0, -1);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -57,11 +62,6 @@
 }
 html {
   height: 100%;
-}
-.ios7 {
-  padding-top: 20px;
-  -webkit-box-shadow: -20px solid #56a623;
-          box-shadow: -20px solid #56a623;
 }
 body {
   -webkit-touch-callout: none;
@@ -134,7 +134,8 @@ body {
   padding: 47px 0;
   margin: auto;
   background-color: #56a623;
-  border-radius: 50%;
+  -webkit-border-radius: 9999px;
+          border-radius: 9999px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -164,6 +165,8 @@ body {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
+  z-index: 2;
+  position: relative;
 }
 @media (max-width: 320px) {
   .white {
@@ -294,6 +297,9 @@ body {
   display: block;
 }
 .nav-drawer {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-overflow-scrolling: touch;
   position: absolute;
   top: 0;
   left: -83%;
@@ -304,6 +310,8 @@ body {
   text-align: left;
   -webkit-transition: all .5s ease;
           transition: all .5s ease;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
 }
 .nav-drawer a {
   display: block;
@@ -321,9 +329,9 @@ body {
   display: block;
   float: right;
   content: '';
-  background: url(../img/next-menu.svg) no-repeat 0 0;
-  -webkit-background-size: auto auto;
-          background-size: auto;
+  background: url(../img/next-menu.png) no-repeat 0 0;
+  -webkit-background-size: auto 100%;
+          background-size: auto 100%;
   width: 14px;
   height: 23px;
   margin-top: 40px;
@@ -422,7 +430,8 @@ body {
           box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1), inset 4px 4px 0 rgba(0, 0, 0, 0.1);
   color: #ffffff;
   display: block;
-  border-radius: 8px;
+  -webkit-border-radius: 8px;
+          border-radius: 8px;
   border: 4px solid #ffffff;
   margin: 24px 15% 0;
   text-decoration: none;
@@ -430,6 +439,11 @@ body {
   font-size: 24px;
   line-height: 56px;
   margin-bottom: 24px;
+}
+.buttons,
+.about-content,
+.end-content {
+  overflow: hidden;
 }
 @media (max-width: 320px) {
   .logo-intro {
@@ -561,7 +575,8 @@ body {
   display: block;
 }
 .seconds {
-  border-radius: 50%;
+  -webkit-border-radius: 9999px;
+          border-radius: 9999px;
   border: 9px solid #fff;
   display: block;
   font-size: 54px;
@@ -577,7 +592,8 @@ body {
           box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1), inset 5px 5px 0 rgba(0, 0, 0, 0.1);
 }
 .add-time {
-  border-radius: 50%;
+  -webkit-border-radius: 9999px;
+          border-radius: 9999px;
   border: 9px solid #fff;
   background-color: #fff;
   display: block;
@@ -663,7 +679,8 @@ body {
 .continue {
   color: #000000;
   display: block;
-  border-radius: 8px;
+  -webkit-border-radius: 8px;
+          border-radius: 8px;
   border: 4px solid #000000;
   margin: 24px 15% 0;
   text-decoration: none;
@@ -675,7 +692,7 @@ body {
 .continue:after {
   content: '';
   display: inline-block;
-  background: url(../img/next.svg) no-repeat 0 0;
+  background: url(../img/next.png) no-repeat 0 0;
   -webkit-background-size: auto auto;
           background-size: auto;
   width: 12px;
