@@ -2,6 +2,7 @@
 
 * To compile LESS assets, you need [Grunt](http://gruntjs.com/).
 * To start the project on `path/to/dz-jam-app/www`, you need [Bower](http://bower.io/).
+* Consequently, [node.js](http://nodejs.org) is required too.
 
 To deploy as a mobile app, you need [Cordova](http://cordova.apache.org/)
 and the platform assets of your choice:
@@ -11,6 +12,8 @@ and the platform assets of your choice:
 
 ## Preparing project
     npm install ncp
+    npm install
+    grunt build
 
 ## Adding platform (ios, android)
 Adds assets to compile to specific platforms
