@@ -21,8 +21,6 @@
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <!-- <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /> -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
         <link rel="stylesheet" type="text/css" href="bower_components/normalize-css/normalize.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
@@ -36,16 +34,12 @@
     </head>
     <body ng-class="{ 'nav-open': isMenuVisible }">
         <div class="header">
-            <div class="menu" ng-click="isMenuVisible = !isMenuVisible">
-                <img ng-src="img/ico-menu.png">
-            </div>
-
-            <img ng-src="img/logoapp-horizontal.png" class="logo">
+            <div class="menu" ng-click="isMenuVisible = !isMenuVisible"></div>
+            <span class="logo"></span>
         </div>
         <nav class="nav-drawer">
-            <div class="nav-logo">
-                <img src="img/logo-white.png">
-            </div>
+            <div class="nav-logo"></div>
+
             <a ng-click="isMenuVisible = false" ng-href="#/">início</a>
             <a class="zebra" ng-click="isMenuVisible = false" ng-href="#/intro">rounds</a>
             <a ng-click="isMenuVisible = false" ng-href="#/about">sobre</a>

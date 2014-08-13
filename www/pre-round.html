@@ -1,14 +1,14 @@
-<div class="first-column">
-    <div class="grey round-header">
-        <h1><img ng-src="img/ico-{{ round.image}}-black.png"> Round {{ round.round }}</h1>
-        <p>{{ round.hint }}</p>
-    </div>
-    <div class="white round-content"><div ng-bind-html="round.content"></div></div>
+<div class="grey round-header">
+    <h1 class="round-title round-title-{{ round.round }}">Round {{ round.round }}</h1>
+    <p ng-bind-html="round.hint"></p>
 </div>
-<div class="second-column">
-    <div class="low-nav">
-        <div class="btn-play">
-            <timer class="seconds" interval="1000" countdown="10" >{{millis | date:'ss'}}</timer>
-        </div>
+
+<div class="white round-content pre-round-content">
+    <div class="content-aligner" ng-bind-html="round.content"></div>
+</div>
+
+<div class="second-column low-nav">
+    <div class="btn-nav">
+        <timer class="seconds" interval="1000" countdown="10" >{{millis | date:'ss'}}</timer>
     </div>
 </div>

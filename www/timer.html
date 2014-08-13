@@ -1,40 +1,25 @@
-<div class="first-column" ng-class="blur">
-    <div class="grey round-header timer-header">
-        <h1><img ng-src="img/ico-{{ round.image }}-black.png"> Round {{ roundNum }}</h1>
-        <p>{{ round.hint }}</p>
-    </div>
-    <div class="white round-content">
-        <div>
-            <timer class="minutes" interval="1000" countdown="round.remminutes">{{millis | date:'mm:ss'}}</timer>
-            <a ng-href="{{ goTo }}" ng-show="timerFinished" ng-class="button">{{ buttonText }}</a>
-        </div>
+<div class="grey round-header" ng-class="blur">
+    <h1 class="round-title round-title-{{ round.round }}">Round {{ round.round }}</h1>
+    <p ng-bind-html="round.hint"></p>
+</div>
+<div class="white round-content timer-round-content">
+    <div class="content-aligner">
+        <timer class="minutes" interval="1000" countdown="round.remminutes">{{millis | date:'mm:ss'}}</timer>
+        <a ng-href="{{ goTo }}" ng-show="timerFinished" ng-class="button">{{ buttonText }}</a>
     </div>
 </div>
-<div class="second-column">
-    <div class="low-nav">
-        <a class="btn-play" ng-hide="timerRunning || timerFinished" ng-click="startTimer()" >
-            <img ng-src="img/play.png" alt="">
-        </a>
-        <a class="btn-play" ng-show="timerRunning" ng-click="pauseTimer()">
-            <img ng-src="img/pause.png" alt="">
-        </a>
-        <div class="btn-play" ng-show="timerFinished"><a class="add-time" ng-click="addTime()">
-            <strong>Extra<br/> Time</strong> +5min
-        </a></div>
 
-        <a ng-click="showHelp()" class="help">?</a>
-    </div>
+<div class="second-column low-nav">
+    <a class="btn-nav btn-play" ng-hide="timerRunning || timerFinished" ng-click="startTimer()" ></a>
+    <a class="btn-nav btn-pause" ng-show="timerRunning" ng-click="pauseTimer()"></a>
+    <div class="btn-nav" ng-show="timerFinished"><a class="add-time" ng-click="addTime()">
+        <strong>Extra<br/> Time</strong> +5min
+    </a></div>
+
+    <a ng-click="showHelp()" class="help">?</a>
 </div>
 
 <div class="modal" ng-hide="isHelpHidden">
-    <div class="round-content" ng-bind-html="round.content"></div>
-    <a ng-click="hideHelp()" class="close-modal">
-        <img src="img/fechar.png">
-    </a>
+    <div class="round-content modal-round-content" ng-bind-html="round.content"></div>
+    <a ng-click="hideHelp()" class="close-modal"></a>
 </div>
-
-<!-- <audio id="demo" preload="auto">
-    <source src="sound/horn.mp3" type="audio/mpeg"></source>
-    <source src="sound/horn.oga" type="audio/ogg"></source>
-    <source src="sound/horn.wav" type="audio/wav"></source>
-</audio> -->

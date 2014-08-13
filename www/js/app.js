@@ -16,31 +16,32 @@ run(function($rootScope) {
     $rootScope.rounds = [{
       round: 1,
       image: 'jamboard',
-      hint: 'Preencher JamBOARD',
+      hint: 'Preencher <strong>Context area</strong>',
       content: '<p class="big">Você tem 15 minutos para<br/>' +
-        'preencher o <strong>JAM</strong>BOARD com:</p>' +
+        'preencher a <strong>Context Area</strong> do <strong>JAM</strong>BOARD com:</p>' +
         '<ul><li>Briefing do Cliente</li>' +
         '<li>Seu Briefing</li>' +
         '<li>Pilares da Marca</li>' +
         '<li>Target</li>' +
         '<li>PopTalks</li>' +
-        '<li>MarketTalks</li></ul>',
+        '<li>Market Talks</li></ul>',
       remminutes: 15 * 60
     },{
       round: 2,
       image: 'jam',
-      hint: 'Fazer Jam',
-      content: '<p class="big">É hora da <strong>JAM</strong>!</p>' +
-        '<p>Vire o JamBoard.<br/>' +
-        'Anote as ideias no verso.<br/>' +
-        'Agora vale tudo!</p>',
+      hint: '<strong>JAM</strong>SESSION',
+      content: '<p class="big">É hora do caos!</p>' +
+        '<p>Use o verso do <strong>JAM</strong>BOARD<br/>' +
+        'para anotar as ideias.<br/>' +
+        'Você tem 30 minutos.</p>',
       remminutes: 30 * 60
     },{
       round: 3,
       image: 'tracks',
-      hint: 'Registrar Tracks',
-      content: '<p class="big">Escolha as 3 melhores ideias.</p>' +
-        '<p>Vire o JamBoard<br/> e registre as tracks.</p>',
+      hint: 'Registrar <strong>TRACKS</strong>',
+      content: '<p class="big">Escolha as 3 melhores ideias!</p>' +
+        '<p>Elas serão suas tracks e você tem<br/>' +
+        '15 minutos para registrá-las no JAMBOARD</p>',
       remminutes: 15 * 60
     }];
 }).

@@ -46,7 +46,7 @@ angular.module('myApp.controllers', []).
             $scope.goTo = '#/end';
         } else {
             $scope.button = 'continue';
-            $scope.buttonText = 'Continue';
+            $scope.buttonText = 'Próximo Round';
             $scope.goTo = '#/pre-round/' + (parseInt($scope.roundNum, 10) + 1);
         }
 
