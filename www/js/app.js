@@ -17,7 +17,7 @@ run(function($rootScope) {
       round: 1,
       image: 'jamboard',
       hint: 'Preencher <strong>Context area</strong>',
-      content: '<p class="big">Você tem 15 minutos para<br/>' +
+      content: '<p>Você tem 15 minutos para<br/>' +
         'preencher a <strong>Context Area</strong> do <strong>JAM</strong>BOARD com:</p>' +
         '<ul><li>Briefing do Cliente</li>' +
         '<li>Seu Briefing</li>' +
