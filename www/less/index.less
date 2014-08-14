@@ -103,6 +103,13 @@ body {
 
 *, *:before, *:after {
   box-sizing: inherit;
+
+  background-repeat: no-repeat;
+  background-position: center;
+
+  .no-svg &{
+    background-size: 100% auto;
+  }
 }
 
 body{
@@ -212,15 +219,19 @@ body{
 }
 
 .btn-play:after{
+  background-image: url(../img/svg/play.svg);
+}
+
+.no-svg .btn-play:after{
   background: transparent url(../img/png/play.png) no-repeat center;
-  background-image: -webkit-linear-gradient(transparent, transparent), url(../img/svg/play.svg);
-  background-image: linear-gradient(transparent, transparent), url(../img/svg/play.svg);
 }
 
 .btn-pause:after{
+  background-image: url(../img/svg/pause.svg);
+}
+
+.no-svg .btn-pause:after{
   background: transparent url(../img/png/pause.png) no-repeat center;
-  background-image: -webkit-linear-gradient(transparent, transparent), url(../img/svg/pause.svg);
-  background-image: linear-gradient(transparent, transparent), url(../img/svg/pause.svg);
 }
 
 @media (max-width: 320px) {
@@ -329,9 +340,11 @@ body{
     top: 50%;
     margin: -20px/2 0 0 -20px/2;
     position: absolute;
+    background-image: url(../img/svg/ico-menu.svg);
+  }
+
+  .no-svg &:after{
     background: transparent url(../img/png/ico-menu.png) no-repeat center;
-    background-image: -webkit-linear-gradient(transparent, transparent), url(../img/svg/ico-menu.svg);
-    background-image: linear-gradient(transparent, transparent), url(../img/svg/ico-menu.svg);
   }
 }
 
@@ -350,9 +363,11 @@ body{
     top: 50%;
     margin: -20px/2 0 0 -86px/2;
     position: absolute;
+    background-image: url(../img/svg/logo-white.svg);
+  }
+
+  .no-svg &:after{
     background: transparent url(../img/png/logo-white.png) no-repeat center;
-    background-image: -webkit-linear-gradient(transparent, transparent), url(../img/svg/logo-white.svg);
-    background-image: linear-gradient(transparent, transparent), url(../img/svg/logo-white.svg);
   }
 }
 
@@ -387,10 +402,7 @@ body{
       display: block;
       float: right;
       content: '';
-      background: url(../img/png/next-menu.png) no-repeat 0 0;
-      background-image: -webkit-linear-gradient(transparent, transparent), url(../img/svg/next-menu.svg);
-      background-image: linear-gradient(transparent, transparent), url(../img/svg/next-menu.svg);
-      background-size: auto 100%;
+      background-image: url(../img/svg/next-menu.svg);
       width: 14px;
       height: 23px;
       margin-top: 40px;
@@ -400,6 +412,10 @@ body{
       background-color: @brand;
     }
   }
+}
+
+.no-svg .nav-drawer a:after{
+  background: url(../img/png/next-menu.png) no-repeat 0 0;
 }
 
 body{
@@ -428,9 +444,11 @@ body{
     top: 50%;
     margin: -20px/2 0 0 -86px/2;
     position: absolute;
+    background-image: url(../img/svg/logoapp-horizontal.svg);
+  }
+
+  .no-svg &:after{
     background: transparent url(../img/png/logoapp-horizontal.png) no-repeat center;
-    background-image: -webkit-linear-gradient(transparent, transparent), url(../img/svg/logoapp-horizontal.svg);
-    background-image: linear-gradient(transparent, transparent), url(../img/svg/logoapp-horizontal.svg);
   }
 }
 
@@ -490,9 +508,11 @@ body{
     top: 50%;
     margin: -124px/2 0 0 -144px/2;
     position: absolute;
+    background-image: url(../img/svg/logo-app.svg);
+  }
+
+  .no-svg &:after{
     background: transparent url(../img/png/logo-app.png) no-repeat center;
-    background-image: -webkit-linear-gradient(transparent, transparent), url(../img/svg/logo-app.svg);
-    background-image: linear-gradient(transparent, transparent), url(../img/svg/logo-app.svg);
   }
 }
 
@@ -603,9 +623,11 @@ body{
     top: 50%;
     margin: -154px/2 0 0 -215px/2;
     position: absolute;
+    background-image: url(../img/svg/tabela.svg);
+  }
+
+  .no-svg &:after{
     background: transparent url(../img/png/tabela.png) no-repeat center;
-    background-image: -webkit-linear-gradient(transparent, transparent), url(../img/svg/tabela.svg);
-    background-image: linear-gradient(transparent, transparent), url(../img/svg/tabela.svg);
   }
 }
 
@@ -714,21 +736,27 @@ body{
 }
 
 .instruction-1:before{
-  background: transparent url(../img/png/ico-jamboard.png) no-repeat center;
-  background-image: -webkit-linear-gradient(transparent, transparent), url(../img/svg/ico-jamboard.svg);
-  background-image: linear-gradient(transparent, transparent), url(../img/svg/ico-jamboard.svg);
+  background-image: url(../img/svg/ico-jamboard.svg);
+
+  .no-svg &{
+    background: transparent url(../img/png/ico-jamboard.png) no-repeat center;
+  }
 }
 
 .instruction-2:before{
-  background: transparent url(../img/png/ico-jam.png) no-repeat center;
-  background-image: -webkit-linear-gradient(transparent, transparent), url(../img/svg/ico-jam.svg);
-  background-image: linear-gradient(transparent, transparent), url(../img/svg/ico-jam.svg);
+  background-image: url(../img/svg/ico-jam.svg);
+
+  .no-svg &{
+    background: transparent url(../img/png/ico-jam.png) no-repeat center;
+  }
 }
 
 .instruction-3:before{
-  background: transparent url(../img/png/ico-tracks.png) no-repeat center;
-  background-image: -webkit-linear-gradient(transparent, transparent), url(../img/svg/ico-tracks.svg);
-  background-image: linear-gradient(transparent, transparent), url(../img/svg/ico-tracks.svg);
+  background-image: url(../img/svg/ico-tracks.svg);
+
+  .no-svg &{
+    background: transparent url(../img/png/ico-tracks.png) no-repeat center;
+  }
 }
 
 .instruction-zebra{
@@ -826,21 +854,27 @@ body{
 }
 
 .round-title-1:before{
-  background: transparent url(../img/png/ico-jamboard-black.png) no-repeat center;
-  background-image: -webkit-linear-gradient(transparent, transparent), url(../img/svg/ico-jamboard-black.svg);
-  background-image: linear-gradient(transparent, transparent), url(../img/svg/ico-jamboard-black.svg);
+  background-image: url(../img/svg/ico-jamboard-black.svg);
+
+  .no-svg &{
+    background: transparent url(../img/png/ico-jamboard-black.png) no-repeat center;
+  }
 }
 
 .round-title-2:before{
-  background: transparent url(../img/png/ico-jam-black.png) no-repeat center;
-  background-image: -webkit-linear-gradient(transparent, transparent), url(../img/svg/ico-jam-black.svg);
-  background-image: linear-gradient(transparent, transparent), url(../img/svg/ico-jam-black.svg);
+  background-image: url(../img/svg/ico-jam-black.svg);
+
+  .no-svg &{
+    background: transparent url(../img/png/ico-jam-black.png) no-repeat center;
+  }
 }
 
 .round-title-3:before{
-  background: transparent url(../img/png/ico-tracks-black.png) no-repeat center;
-  background-image: -webkit-linear-gradient(transparent, transparent), url(../img/svg/ico-tracks-black.svg);
-  background-image: linear-gradient(transparent, transparent), url(../img/svg/ico-tracks-black.svg);
+  background-image: url(../img/svg/ico-tracks-black.svg);
+
+  .no-svg &{
+    background: transparent url(../img/png/ico-tracks-black.png) no-repeat center;
+  }
 }
 
 .round-content{
@@ -894,14 +928,15 @@ body{
 .continue:after{
   content: '';
   display: inline-block;
-  background: url(../img/png/next.png) no-repeat 0 0;
-  background-image: -webkit-linear-gradient(transparent, transparent), url(../img/svg/next.svg);
-  background-image: linear-gradient(transparent, transparent), url(../img/svg/next.svg);
-  background-size: auto;
+  background-image: url(../img/svg/next.svg);
   width: 12px;
   height: 24px;
   vertical-align: middle;
   margin-left: 1.5em;
+
+  .no-svg &{
+    background: url(../img/png/next.png) no-repeat 0 0;
+  }
 }
 
 .help{
@@ -947,10 +982,7 @@ body{
 
   &:before{
     content: '';
-    background: transparent url(../img/png/fechar.png) no-repeat center;
-    background-image: -webkit-linear-gradient(transparent, transparent), url(../img/svg/fechar.svg);
-    background-image: linear-gradient(transparent, transparent), url(../img/svg/fechar.svg);
-
+    background-image: url(../img/svg/fechar.svg);
     width: 34px;
     height: 34px;
     position: absolute;
@@ -958,8 +990,11 @@ body{
     top: 50%;
     margin-left: -34px/2;
     margin-top: -34px/2;
-
     filter: drop-shadow(2px 2px 0 rgba(0,0,0,.5));
+  }
+
+  .no-svg &:before{
+    background: transparent url(../img/png/fechar.png) no-repeat center;
   }
 }
 
