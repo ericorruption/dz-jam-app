@@ -4,6 +4,7 @@ www/bower_components
 
 # minified files
 www/css/
+www/js/dist/
 
 # ------
 # TESTS

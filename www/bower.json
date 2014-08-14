@@ -2,7 +2,6 @@
   "name": "Jam Session",
   "version": "0.0.1",
   "dependencies": {
-    "normalize-css": "latest",
     "angular-route": "latest",
     "angular-animate": "latest",
     "angular-sanitize": "latest",

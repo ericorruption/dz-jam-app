@@ -4,139 +4,103 @@ module.exports = function(grunt) {
 
   // Package-specific configs
   grunt.initConfig({
+
     pkg: grunt.file.readJSON('package.json'),
-    dirs: {
-      css: '<%= pkg.paths.global %><%= pkg.paths.css %>',
-      img: '<%= pkg.paths.global %><%= pkg.paths.img %>',
-      js: '<%= pkg.paths.global %><%= pkg.paths.js %>',
-      sass: '<%= pkg.paths.global %><%= pkg.paths.sass %>',
-      less: '<%= pkg.paths.global %><%= pkg.paths.less %>',
-      fonts: '<%= pkg.paths.global %><%= pkg.paths.fonts %>',
-      dist: '<%= pkg.paths.global %><%= pkg.paths.dist %>',
-    },
+
+    // LESS / CSS
     autoprefixer: {
       basic: {
         options: {
           browsers: ['Android 2.1', '> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']
         },
         expand: true,
-        cwd: '<%= dirs.css %>',
+        cwd: 'www/css/',
         src: '*.css',
-        dest: '<%= dirs.css %>'
+        dest: 'www/css/'
       }
     },
-    clean: ['<%= dirs.dist %>'],
-    compass: {
-      options: {
-        basePath: '<%= pkg.paths.global %>',
-        cssDir: '<%= pkg.paths.css %>',
-        imagesDir: '<%= pkg.paths.img %>',
-        sassDir: '<%= pkg.paths.sass %>',
-        relativeAssets: true
-      },
-      basic: {}
-    },
-    copy: {
-      build: {
-        files: [
-          {
-            expand: true,
-            cwd: '<%= dirs.css %>',
-            src: ['*.min.css'],
-            dest: '<%= dirs.dist %>css/'
-          },
-          {
-            expand: true,
-            cwd: '<%= dirs.js %>',
-            src: ['**/*.min.js'],
-            dest: '<%= dirs.dist %>js/'
-          },
-          {
-            expand: true,
-            cwd: '<%= pkg.paths.global %>fonts/',
-            src: ['*'],
-            dest: '<%= dirs.dist %>fonts/'
-          }
-        ]
-      }
-    },
-    csscss: {
-      basic: {
-        expand: true,
-        cwd: '<%= dirs.css %>',
-        src: ['*.css', '!*.min.css']
-      }
-    },
+
     cssmin: {
       basic: {
         expand: true,
-        cwd: '<%= dirs.css %>',
+        cwd: 'www/css/',
         src: ['*.css', '!*.min.css'],
-        dest: '<%= dirs.css %>',
+        dest: 'www/css/',
         ext: '.min.css'
       }
     },
-    imagemin: {
-      build: {
-        files: [{
-          expand: true,
-          cwd: '<%= dirs.img %>',
-          src: ['**/*.{png,jpg,gif}'],
-          dest: '<%= dirs.dist %>img/'
-        }]
-      }
-    },
+
     less: {
       basic: {
         expand: true,
-        cwd: '<%= dirs.less %>',
-        src: ['*.less', '!_*.less'],
-        dest: '<%= dirs.css %>',
+        cwd: 'www/less/',
+        src: ['**/*.less', '!**/_*.less'],
+        dest: 'www/css/',
         ext: '.css'
       }
     },
+
+    // JS
     uglify: {
       basic: {
         files: {
-          '<%= dirs.js %>default.min.js': ['<%= dirs.js %>_plugins.js', '<%= dirs.js %>default.js']
+          'js/default.min.js': ['js/default.js']
+        }
+      },
+      bower: {
+        files: {
+          'www/js/dist/angular.min.js' : ['www/bower_components/fastclick/lib/fastclick.js',
+                                          'www/bower_components/angular/angular.js',
+                                          'www/bower_components/angular-route/angular-route.js',
+                                          'www/bower_components/angular-animate/angular-animate.js',
+                                          'www/bower_components/angular-sanitize/angular-sanitize.js',
+                                          'www/bower_components/angular-timer/dist/angular-timer.min.js']
         }
       }
     },
+
+    // Spriting
+    sprite: {
+      basic: {
+        'src': ['www/img/sprite/*.png'],
+        'destImg': 'www/img/sprite.png',
+        'destCSS': 'www/less/_sprite.less'
+      }
+    },
+
+    // watching
     watch: {
-      sass: {
-        files: ['<%= dirs.sass %>*.scss'],
-        tasks: ['compass:basic', 'newer:autoprefixer:basic']
-      },
       less: {
-        files: ['<%= dirs.less %>*.less'],
-        tasks: ['less:basic', 'newer:autoprefixer:basic']
+        files: ['www/less/*.less'],
+        tasks: ['less:basic', 'newer:autoprefixer:basic', 'cssmin:basic']
       },
-      js: {
-        files: ['<%= dirs.js %>**/*.js', '!<%= dirs.js %>*.min.js'],
-        tasks: ['newer:uglify:basic']
-      },
+
+      // js: {
+      //   files: ['js/default.js'],
+      //   tasks: ['newer:uglify:basic']
+      // },
+
+      // sprite: {
+      //   files: ['img/sprite/*'],
+      //   tasks: ['sprite:basic']
+      // },
+
       livereload: {
         files: [
-          'application/**/*.phtml',
-          '<%= dirs.css %>*.min.css',
-          '<%= dirs.img %>**/*.{png,jpg,gif}',
-          '<%= dirs.js %>**/*.min.js'
+          'www/index.html',
+          'www/css/*.min.css',
+          // 'www/js/**/*.min.js'
         ],
         options: {
           livereload: true
         }
       }
-    },
-    build: {
-      less: 'less',
-      sass: 'compass'
     }
+
   });
 
   // Default tasks
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('default', ['build', 'watch']);
 
-  grunt.registerMultiTask('build', function() {
-    grunt.task.run(['clean', this.data + ':basic', 'newer:autoprefixer:basic', 'newer:cssmin:basic', 'newer:uglify:basic', 'copy:build', 'imagemin:build']);
-  });
+  grunt.registerTask('build', ['uglify:bower', 'less:basic', 'newer:autoprefixer:basic', 'cssmin:basic']);
 };
