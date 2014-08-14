@@ -79,9 +79,14 @@ angular.module('myApp.controllers', []).
 
         $scope.$on('timer-stopped', function (event, data){
             if (data.millis === 0) {
-                if (navigator.notification){
-                    navigator.notification.vibrate(1500); // 1.5 second
-                    navigator.notification.beep(1);
+                if (navigator.notification) {
+                    if (navigator.notification.beep) {
+                        navigator.notification.beep(1);
+                    }
+
+                    if (navigator.notification.vibrate) {
+                        navigator.notification.vibrate(1500); // 1.5 second
+                    }
                 }
 
                 $scope.$apply(function () {
