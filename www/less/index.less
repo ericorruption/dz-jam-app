@@ -314,6 +314,36 @@ body{
   }
 }
 
+
+.landscape-overlay{
+  display: none;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 11;
+  background: @brand;
+}
+
+.landscape-text{
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 320px;
+  text-shadow: 0 2px 0 rgba(0,0,0,.2);
+}
+
+@media (orientation: landscape) and (max-width: 599px) {
+  body{
+    overflow: hidden;
+  }
+
+  .landscape-overlay{
+    display: block;
+  }
+}
+
 // =============================================================================
 // Header / menu
 // =============================================================================
