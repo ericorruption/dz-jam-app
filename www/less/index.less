@@ -80,7 +80,7 @@
 // Cordova
 // =============================================================================
 
-* {
+*, *:before, *:after {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-font-smoothing: antialiased;
 }
@@ -240,6 +240,10 @@ body{
   .home-lead{
     padding-top: 5%;
     padding-bottom: 5%;
+  }
+
+  .low-nav{
+    height: 90px;
   }
 
   .title{
@@ -566,16 +570,52 @@ body{
 }
 
 .timer-round-content, .pre-round-content{
-  display: table;
+  // display: table;
+
   // overflow: auto;
+  text-align: center;
+
+  &:before{
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -6px;
+  }
 }
 
 .content-aligner{
   width: 100%;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
+  // display: table-cell;
+  // vertical-align: middle;
+  // text-align: center;
   // overflow: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@media (max-width: 320px) {
+  .home-intro{
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  .home-intro-text{
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  .logo-home{
+    width: 120px;
+    height: 103px;
+
+    &:after{
+      width: 120px;
+      height: 103px;
+      margin: -103px/2 0 0 -120px/2;
+    }
+
+  }
 }
 
 @media (min-width: 800px) {
@@ -671,7 +711,14 @@ body{
 
 @media (max-width: 320px) {
   .jamboard{
-    max-width: 180px;
+    width: 120px;
+    height: 86px;
+
+    &:after{
+      width: 120px;
+      height: 86px;
+      margin: -86px/2 0 0 -120px/2;
+    }
   }
 }
 
