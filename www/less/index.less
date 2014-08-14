@@ -640,18 +640,18 @@ body{
 
 .jamboard{
   display: block;
-  width: 215px;
-  height: 154px;
+  width: 180px;
+  height: 129px;
   margin: 22px auto 18px;
   position: relative;
 
   &:after{
     content: '';
-    width: 215px;
-    height: 154px;
+    width: 180px;
+    height: 129px;
     left: 50%;
     top: 50%;
-    margin: -154px/2 0 0 -215px/2;
+    margin: -129px/2 0 0 -180px/2;
     position: absolute;
     background-image: url(../img/svg/tabela.svg);
   }
@@ -727,7 +727,7 @@ body{
     content: counter(section);
 
     position: absolute;
-    left: 18.75%;
+    left: 15%;
     top: 50%;
     font-size: 60px;
     line-height: 1;
@@ -749,7 +749,8 @@ body{
   display: table-cell;
   vertical-align: middle;
   width: 100%;
-  padding-left: 32.5%;
+  // padding-left: 32.5%;
+  padding-left: 28%;
   text-decoration: none;
   color: @brand;
   position: relative;
@@ -834,8 +835,8 @@ body{
   display: block;
   font-size: 21px;
   line-height: 1;
-  height: 72px + 9px + 10px;
-  width: 82px + 9px;
+  height: 82px + 18px;
+  width: 82px + 18px;
   padding-top: 10px;
   text-align: center;
   font-weight: bold;
@@ -844,8 +845,8 @@ body{
   position: absolute;
   left: 50%;
   top: 50%;
-  margin-top: -(72px + 9px + 10px)/2;
-  margin-left: -(82px + 9px)/2;
+  margin-top: -(82px + 18px)/2;
+  margin-left: -(82px + 18px)/2;
   box-shadow:  5px 5px 0 rgba(0,0,0,.1);
 
   color: @brand;
@@ -945,12 +946,19 @@ body{
   font-size: 107px;
   line-height: 0.7;
   margin: 0;
+  text-align: center;
+
+  span{
+    display: inline-block;
+    width: 259px;
+    text-align: left;
+  }
 }
 
 .finish, .continue{
   .button(#000);
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 7%;
+  margin-right: 7%;
 
   text-transform: uppercase;
 }
@@ -961,8 +969,9 @@ body{
   background-image: url(../img/svg/next.svg);
   width: 12px;
   height: 24px;
+  margin-bottom: 6px;
   vertical-align: middle;
-  margin-left: 1.5em;
+  margin-left: 1em;
 
   .no-svg &{
     background: url(../img/png/next.png) no-repeat 0 0;
@@ -1112,6 +1121,10 @@ body{
 
   .minutes{
     font-size: 180px;
+
+    span{
+      width: 435px;
+    }
   }
 
   .modal .round-content{
@@ -1222,5 +1235,9 @@ body{
   .home-button, .continue, .finish{
     font-size: 40px;
     line-height: 88px;
+  }
+
+  .continue:after{
+    margin-left: 0.5em;
   }
 }
