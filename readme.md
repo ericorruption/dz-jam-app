@@ -29,17 +29,19 @@ Adds assets to compile to specific platforms
 
 ## Deployment: Android
 
-* Edit `AndroidManifest.xml` on `platforms/android` folder, changing the following line:
+* Edit `AndroidManifest.xml` on `platforms/android` folder, changing the following line (before `cordova build`):
 
         <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="19" />
 
 
 * Execute the commands:
 
-        cd platforms/android/ant-build
-        keytool -genkey -keystore release.keystore -alias jamapp -validity 10000
-        jarsigner -keystore release.keystore JamApp-release-unsigned.apk jamapp
+        cd assets/android
+        jarsigner -keystore release.keystore ../../platforms/android/ant-build/JamApp-release-unsigned.apk jamapp
+        cd ../../platforms/android/ant-build
         zipalign -v 4 JamApp-release-unsigned.apk JamApp-release.apk
+
+when asked for a password, use `dzprav06`.
 
 
 * Upload JamApp-release.apk to [Google Play Developer Console](https://play.google.com/apps/publish).
