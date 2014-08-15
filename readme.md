@@ -36,9 +36,8 @@ Adds assets to compile to specific platforms
 
 * Execute the commands:
 
-        cd assets/android
-        jarsigner -keystore release.keystore ../../platforms/android/ant-build/JamApp-release-unsigned.apk jamapp
-        cd ../../platforms/android/ant-build
+        jarsigner -keystore release.keystore platforms/android/ant-build/JamApp-release-unsigned.apk jamapp
+        cd platforms/android/ant-build
         zipalign -v 4 JamApp-release-unsigned.apk JamApp-release.apk
 
 when asked for a password, use `dzprav06`.
