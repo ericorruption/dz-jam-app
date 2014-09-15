@@ -11,4 +11,5 @@
     <access origin="*" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#53a80f" />
+    <preference name="DisallowOverscroll" value="true" />
 </widget>

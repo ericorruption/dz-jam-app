@@ -4,6 +4,10 @@ window.addEventListener('load', function() {
     new FastClick(document.body);
 }, false);
 
+document.addEventListener('touchmove', function (e) {
+  e.preventDefault();
+});
+
 // Declare app level module which depends on filters, and services
 angular.module('myApp', [
   'ngRoute',
