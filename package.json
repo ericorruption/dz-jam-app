@@ -1,15 +1,21 @@
 {
-  "name": "my-project-name",
-  "version": "0.1.0",
+  "name": "dz-jam-app",
+  "version": "0.1.2",
+  "private": true,
+  "scripts": {
+    "postinstall": "bower install",
+    "start": "grunt"
+  },
   "devDependencies": {
-    "grunt": "latest",
-    "grunt-autoprefixer": "latest",
-    "grunt-contrib-cssmin": "latest",
-    "grunt-contrib-less": "latest",
-    "grunt-contrib-uglify": "latest",
-    "grunt-contrib-watch": "latest",
-    "grunt-newer": "latest",
-    "grunt-spritesmith": "latest",
-    "load-grunt-tasks": "latest"
+    "bower": "^1.7.9",
+    "grunt": "1.0.1",
+    "grunt-autoprefixer": "3.0.4",
+    "grunt-contrib-cssmin": "1.0.1",
+    "grunt-contrib-less": "1.4.0",
+    "grunt-contrib-uglify": "2.0.0",
+    "grunt-contrib-watch": "1.0.0",
+    "grunt-newer": "1.2.0",
+    "grunt-spritesmith": "6.3.1",
+    "load-grunt-tasks": "3.5.0"
   }
 }
