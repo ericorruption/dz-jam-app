@@ -11,10 +11,8 @@ angular.module('myApp.controllers', []).
 
         $scope.links = document.getElementsByTagName("link");
 
-        for (var x in $scope.links) {
-            var link = $scope.links[x];
-
-            link.href = link.href + "?";
+        for (var i = 0; i < $scope.links.length; i++) {
+          $scope.links[i].href = $scope.links[i].href + "?";
         }
     }])
     .controller('preRoundCtrl', ['$location', '$scope', '$rootScope', '$routeParams', function ($location, $scope, $rootScope, $routeParams) {
