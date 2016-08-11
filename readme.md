@@ -1,21 +1,18 @@
 # Jam App
 
-* To compile LESS assets, you need [Grunt](http://gruntjs.com/).
-* To start the project on `path/to/dz-jam-app/www`, you need [Bower](http://bower.io/).
-* Consequently, [node.js](http://nodejs.org) is required too.
+## Dependencies
+* [node.js](https://nodejs.org)
+* [Cordova](http://cordova.apache.org/) (`npm install -g cordova`)
 
-To deploy as a mobile app, you need [Cordova](http://cordova.apache.org/)
-and the platform assets of your choice:
-
+To deploy as a mobile app:
 * Android needs [Ant](http://ant.apache.org/) and the [Android SDK](http://developer.android.com/sdk/).
 * IOS needs a Mac. Seriously. And [XCode](https://developer.apple.com/xcode/downloads/).
 
 ## Preparing project
-    npm install ncp
-    npm install
-    grunt build
+* npm install
+* npm start
 
-## Adding platform (ios, android)
+## Adding platform (ios, android, browser)
 Adds assets to compile to specific platforms
 
     cordova platform add <platform>
