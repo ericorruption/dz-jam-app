@@ -1,5 +1,7 @@
 # Jam App
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ericorruption/dz-jam-app.svg)](https://greenkeeper.io/)
+
 ## Dependencies
 * [node.js](https://nodejs.org)
 * [Cordova](http://cordova.apache.org/) (`npm install -g cordova`)
